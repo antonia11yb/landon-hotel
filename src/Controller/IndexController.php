@@ -13,9 +13,10 @@ class IndexController extends AbstractController
      */
     public function home()
     {
-        return new Response(
-            '<h1>My first Symfony Page</h1>'
-        );
+        $year = random_int(0, 100);
+        return $this->render('index.html.twig', [
+            'year' => $year,
+        ]);
     }
 
 }
